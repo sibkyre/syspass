@@ -6,10 +6,7 @@ This repository contains several Ansible Roles:
 - Syspass Password Manager Entries Deletion
 - Docker Installation
 - Docker Compose Installation
-- Gitlab Server Installation (Tested on Centos 8 Stream)
 
 Official Docs:
 
 https://syspass-doc.readthedocs.io/en/3.1/
-
-https://about.gitlab.com/install/
