@@ -1,0 +1,5 @@
+- name: Remove old versions docker
+  include_tasks: remove_old_docker_pkgs.yml
+
+- name: Setup and install Docker
+  include_tasks: setup_docker.yml

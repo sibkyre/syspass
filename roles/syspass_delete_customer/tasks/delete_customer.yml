@@ -1,0 +1,9 @@
+---
+- name: Delete Account
+  mysql_query:
+   login_db: syspass
+   check_hostname: no
+   login_host: "{{ host }}"
+   login_password: "{{ password }}"
+   login_user: "{{ user }}"
+   query: delete from Client where id = '{{ id.stdout[1] }}'  

@@ -1,0 +1,38 @@
+- name: Install Mysql repo
+  apt:
+    deb: https://dev.mysql.com/get/mysql-apt-config_0.8.20-1_all.deb
+    state: present
+  
+- name: Install required packages
+  apt:
+   name: "{{ pkgs }}"
+   state: present
+   update_cache: yes
+  notify: enable apache2 
+
+- name: Update all packages
+  apt:
+    name: '*'
+    state: latest
+    update_cache: yes
+
+- name: Check if server needs restarting
+  shell:
+    cmd: needrestart -r l
+  register: reboot_code
+  ignore_errors: yes
+
+- name: Reboot server if needed
+  reboot:
+    reboot_timeout: 300
+    test_command: uptime
+  when: reboot_code.rc != 0
+
+- name: Enable firewall port
+  firewalld:
+   immediate: yes
+   state: enabled
+   permanent: yes
+   zone: public
+   service: "{{ item }}"
+  loop: "{{ firewall_rules }}"

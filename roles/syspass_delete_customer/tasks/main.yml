@@ -1,0 +1,12 @@
+---
+- name: Get Customer ID
+  include_tasks: get_client_id.yml
+
+- name: Delete Account
+  include_tasks: delete_account.yml
+
+- name: Delete Account History
+  include_tasks: delete_account_history.yml
+
+- name: Delete Customer from Syspass
+  include_tasks: delete_customer.yml 

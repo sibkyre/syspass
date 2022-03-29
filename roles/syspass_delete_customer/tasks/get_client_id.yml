@@ -1,0 +1,19 @@
+---
+- name: Get CLient id
+  mysql_query:
+   login_db: syspass
+   check_hostname: no
+   login_host: localhost
+   login_password: password
+   login_user: root
+   query: select id from Client where name = 'my client'
+  register: client_name_id
+
+- name: retrieve id output
+  shell:
+   cmd: "echo {{ client_name_id.query_result }} | grep id | awk -F ':' '{ print $2 }'"
+  register: id
+
+- name: debug id
+  debug:
+          cmd: "echo {{ id.stdout[1] }}"
