@@ -1,0 +1,15 @@
+- name: Deploy syspass on Docker on CentOS
+  become: yes
+  hosts: all
+  pre_tasks:
+    
+    - name: Include role to install docker
+      include_role: 
+        name: docker
+
+    - name: Include role install docker compose
+      include_role: 
+        name: docker_compose
+
+  roles:
+    - syspass_docker

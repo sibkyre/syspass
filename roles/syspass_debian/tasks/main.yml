@@ -1,0 +1,9 @@
+---
+- name: Including Installation Task
+  include_tasks: installation.yml
+
+- name: Include Directory and Permission Task
+  include_tasks: directories_and_permissions.yml
+
+- name: Include PHP Composer Task
+  include_tasks: php_composer.yml

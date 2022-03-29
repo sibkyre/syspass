@@ -1,0 +1,5 @@
+---
+# defaults file for syspass_delete_customer
+host: localhost
+user: root
+password: password

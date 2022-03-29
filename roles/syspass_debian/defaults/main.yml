@@ -1,0 +1,41 @@
+---
+pkgs:
+ - wget
+ - git
+ - locales 
+ - php-dev
+ - mysql-community-server 
+ - needrestart
+ - firewalld
+ - libmcrypt-dev
+ - apache2 
+ - libapache2-mod-php 
+ - php-pear 
+ - php 
+ - php-cgi 
+ - php-cli 
+ - php-common 
+ - php-fpm 
+ - php-gd 
+ - php-json 
+ - php-mysql 
+ - php-readline 
+ - curl 
+ - php-intl 
+ - php-ldap 
+ - php-xml 
+ - php-mbstring 
+
+httpd_svc: 
+ - apache2
+ - mysqld
+
+firewall_rules:
+ - http
+ - https
+
+syspass_directory: /var/www/html/syspass
+git_repo: https://github.com/nuxsmin/sysPass.git
+syspass_conf_dirs:
+ - "{{ syspass_directory }}/app/config"
+ - "{{ syspass_directory }}/backup"
