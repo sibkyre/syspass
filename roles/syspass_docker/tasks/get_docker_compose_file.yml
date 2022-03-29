@@ -1,6 +1,0 @@
----
-- name: Get docker-compose file
-  get_url:
-    url: https://raw.githubusercontent.com/nuxsmin/docker-syspass/master/docker-compose.yml
-    dest: "{{ compose_file }}"
-

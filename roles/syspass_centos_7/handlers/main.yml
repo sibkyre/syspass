@@ -1,6 +1,0 @@
-- name: enable httpd
-  systemd:
-   name: "{{ item }}"
-   state: restarted
-   enabled: yes
-  loop: "{{ httpd_svc }}"

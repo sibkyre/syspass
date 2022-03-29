@@ -1,6 +1,0 @@
----
-- name: Delete Customer on Syspass 
-  become: yes
-  hosts: all
-  roles:
-    - syspass_delete_customer

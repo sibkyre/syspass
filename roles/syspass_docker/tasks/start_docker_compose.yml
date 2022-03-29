@@ -1,3 +1,0 @@
-- name: Start Docker
-  shell:
-    cmd: docker-compose -p syspass -f "{{ compose_file }}" up -d

@@ -1,4 +1,0 @@
-- name: Remove old docker packages
-  yum:
-    name: "{{ old_pkg }}"
-    state: absent

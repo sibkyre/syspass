@@ -1,6 +1,0 @@
----
-- name: Deploy syspass on CentOS 7
-  become: yes
-  hosts: all
-  roles:
-    - syspass_centos_7
