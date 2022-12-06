@@ -1,5 +1,5 @@
 - name: create script
-  template:
+  ansible.builtin.template:
     src: install_composer.sh.j2
     mode: 0755
     owner: root
@@ -7,25 +7,25 @@
     dest: /usr/local/bin/install_composer.sh
 
 - name: Execute the script
-  shell:
+  ansible.builtin.shell:
     cmd: cd "{{ syspass_directory }}"; /usr/local/bin/install_composer.sh
 
 - name: Delete lock file
-  file:
+  ansible.builtin.file:
     state: absent
     path: "{{ syspass_directory}}/composer.lock"
 
 - name: Set correct perms
-  file:
+  ansible.builtin.file:
     path: "{{ syspass_directory}}/composer.phar"
     owner: apache
 
 - name: Install syspass dependencies
-  shell:
+  ansible.builtin.shell:
     cmd: cd "{{ syspass_directory }}"; php composer.phar install --no-dev -n
 
 - name: Copy syspass apache conf
-  template:
+  ansible.builtin.template:
     src: syspass.conf.j2
     dest: /etc/httpd/conf.d/syspass.conf
     owner: apache
