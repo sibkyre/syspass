@@ -1,6 +1,0 @@
----
-- name: Deploy syspass on Debian 
-  become: yes
-  hosts: all
-  roles:
-    - syspass_debian

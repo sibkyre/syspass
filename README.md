@@ -2,7 +2,6 @@ This repository contains several Ansible Roles:
 
 - Syspass Password Manager CentOS Installation (Tested on CentOS 7)
 - Syspass Password Manager Docker Installation (Tested on CentOS 7)
-- Syspass Password Manager Debian Installation (Tested on Debian 11)
 - Syspass Password Manager Entries Deletion
 - Docker Installation
 - Docker Compose Installation
