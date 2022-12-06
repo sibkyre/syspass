@@ -1,6 +1,6 @@
 ---
 - name: Get CLient id
-  mysql_query:
+  community.mysql.mysql_query:
    login_db: syspass
    check_hostname: no
    login_host: localhost
@@ -10,10 +10,10 @@
   register: client_name_id
 
 - name: retrieve id output
-  shell:
+  ansible.builtin.shell:
    cmd: "echo {{ client_name_id.query_result }} | grep id | awk -F ':' '{ print $2 }'"
   register: id
 
 - name: debug id
-  debug:
-          cmd: "echo {{ id.stdout[1] }}"
+  ansible.builtin.debug:
+   cmd: "echo {{ id.stdout[1] }}"

@@ -1,6 +1,8 @@
 ---
 - name: Get Docker Compose File
-  include_tasks: get_docker_compose_file.yml  
+  ansible.builtin.include_tasks: 
+    file: get_docker_compose_file.yml  
 
 - name: Start Docker Compose
-  include_tasks: start_docker_compose.yml
+  ansible.builtin.include_tasks: 
+    file: start_docker_compose.yml

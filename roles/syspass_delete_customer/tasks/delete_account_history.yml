@@ -1,7 +1,7 @@
 
 ---
 - name: Delete Account
-  mysql_query:
+  community.mysql.mysql_query:
    login_db: syspass
    check_hostname: no
    login_host: "{{ host }}"
