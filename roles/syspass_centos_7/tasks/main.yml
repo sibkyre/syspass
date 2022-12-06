@@ -1,15 +1,20 @@
 ---
 - name: Including Installation Task
-  include_tasks: installation.yml
+  ansible.builtin.include_tasks: 
+    file: installation.yml
 
 - name: Include Directory and Permission Task
-  include_tasks: directories_and_permissions.yml
+  ansible.builtin.include_tasks: 
+    file: directories_and_permissions.yml
 
 - name: Include Selinux Task
-  include_tasks: selinux.yml
+  ansible.builtin.include_tasks: 
+    file: selinux.yml
 
 - name: Include PHP Composer Task
-  include_tasks: php_composer.yml
+  ansible.builtin.include_tasks: 
+    file: php_composer.yml
 
 - name: Include Mysql get root password
-  include_tasks: get_temporary_mysql_root_password.yml
+  ansible.builtin.include_tasks:
+    file: get_temporary_mysql_root_password.yml
