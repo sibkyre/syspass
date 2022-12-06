@@ -1,6 +1,8 @@
 - name: enable httpd
-  systemd:
-   name: "{{ item }}"
+  ansible.builtin.systemd:
+   name: "{{ httpd_service }}"
    state: restarted
    enabled: yes
   loop: "{{ httpd_svc }}"
+  loop_control:
+    loop_var: httpd_service
